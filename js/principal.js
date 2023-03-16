@@ -13,14 +13,32 @@ var tdIMC = paciente.querySelector(".info-imc") // Acessando '.info-imc' e atrib
 
 // --- Validação ---
 
-if(peso < 0  || peso > 400) {
+var pesoValido = true //  variavel é verdadeira
+var alturaValida = true //  variavel é verdadeira
+
+if (peso <= 0  || peso >= 400) {
     alert("Tem certeza que isso está certo?")
+    pesoValido = false  // a variavel se torna falsa
+    tdIMC.textContent = "Peso Inválido"
+}
+
+if (altura <= 0  || altura >= 2.50) {
+
+    alert("Tem certeza que isso está certo?")
+    alturaValida = false  // a variavel se torna falsa
+    tdIMC.textContent = "Altura Inválida"
 }
 
 // --- Definindo o cálculo de IMC e passando ele para tdIMC ---
 
-var IMC = peso / (altura * altura) // Definindo a varáivel 'IMC' com base no cálculo de IMC
+if (alturaValida && pesoValido) { // se os dois valores forem 'true' o bloco é executado
+
+    var IMC = peso / (altura * altura) // Definindo a varáivel 'IMC' com base no cálculo de IMC
 tdIMC.textContent = IMC // Acessando o conteúdo de 'tdIMC' e definindo que o conteúdo deve ser a variável IMC
+
+}
+
+
 
 
 
