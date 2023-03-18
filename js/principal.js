@@ -1,10 +1,10 @@
 var titulo = document.querySelector(".titulo");
 titulo.textContent = "Aparecida Nutricionista";
 
-var pacientes = document.querySelectorAll(".paciente"); // Acessando '#primeiro paciente' e atribuindo a variavel
+var pacientes = document.querySelectorAll(".paciente"); // Acessando '.paciente' e atribuindo a variavel
 
 for(var i = 0; i < pacientes.length ; i++) {
-        var paciente = pacientes[i]
+        var paciente = pacientes[i] // atribuindo a lista de pacientes a variável 'paciente'
 
         var tdPeso = paciente.querySelector(".info-peso");  // Acessando '.info-peso' e atribuindo a variavel
         var peso = tdPeso.textContent // Acessando o conteúdo de 'td peso' e atribuindo a variavel
@@ -19,7 +19,7 @@ for(var i = 0; i < pacientes.length ; i++) {
         var pesoValido = true //  variavel é verdadeira
         var alturaValida = true //  variavel é verdadeira
 
-        if (peso <= 0  || peso >= 400) {
+        if (peso <= 0  || peso >= 400) { // <<-- VALIDANDO PESO
 
             alert("Tem certeza que isso está certo?")
             pesoValido = false  // a variavel se torna falsa
@@ -28,7 +28,7 @@ for(var i = 0; i < pacientes.length ; i++) {
             paciente.classList.add("paciente-invalido")
         }
 
-        if (altura <= 0  || altura >= 2.50) {
+        if (altura <= 0  || altura >= 2.50) { // <<-- VALIDANDO ALTURA
 
             alert("Tem certeza que isso está certo?")
             alturaValida = false  // a variavel se torna falsa
