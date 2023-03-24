@@ -47,9 +47,14 @@ for(var i = 0; i < pacientes.length ; i++) {
         }
 }
 
+// adicionando pacientes por evento de clique
 
+var botao = document.getElementById("adicionar-paciente") //atribuindo ID do botão à variável 'botao'
 
+botao.addEventListener("click", adicionarPaciente) // aguardando clique para chamar função 'adicionar paciente'
 
-
+function adicionarPaciente() {
+    alert("funcionou")
+}
 
 
