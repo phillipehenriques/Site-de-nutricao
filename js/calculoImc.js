@@ -41,49 +41,16 @@ for(var i = 0; i < pacientes.length ; i++) {
 
         if (alturaValida && pesoValido) { // se os dois valores forem 'true' o bloco é executado
 
-            var IMC = peso / (altura * altura) // Definindo a varáivel 'IMC' com base no cálculo de IMC
-        tdIMC.textContent = IMC.toFixed(2) // Acessando o conteúdo de 'tdIMC' e definindo que o conteúdo deve ser a variável IMC
+            var IMC = calcular(peso, altura)
+        tdIMC.textContent = IMC // Acessando o conteúdo de 'tdIMC' e definindo que o conteúdo deve ser a variável IMC
 
         }
 }
 
-// adicionando pacientes por evento de clique
+function calcular (peso, altura) {
 
-var botaoAdicionar = document.getElementById("adicionar-paciente") //atribuindo ID do botão à variável 'botao'
-botaoAdicionar.addEventListener("click", function(event){
-    event.preventDefault()
+    var imc = peso / (altura * altura)
+
+    return imc.toFixed(2)
     
-    var form = document.querySelector("#form-adiciona") // atribuindo o id do form (form-adiciona), para a variável form
-    
-    // definindo variaveis para cada campo de input
-
-    var nome = form.nome.value
-    var peso = form.peso.value
-    var altura = form.altura.value
-    var gordura = form.gordura.value
-
-    var pacienteTr = document.createElement("tr") // criando tr do paciente
-
-    var nomeTd = document.createElement("td")
-    var pesoTd = document.createElement("td")
-    var alturaTd = document.createElement("td")
-    var gorduraTd = document.createElement("td")
-    var imcTd = document.createElement("td")
-
-    nomeTd.textContent = nome
-    pesoTd.textContent = peso
-    alturaTd.textContent = altura
-    gorduraTd.textContent = gordura
-
-    pacienteTr.appendChild(nomeTd)
-    pacienteTr.appendChild(pesoTd)
-    pacienteTr.appendChild(alturaTd)
-    pacienteTr.appendChild(gorduraTd)
-
-    var tabela = document.querySelector("#tabela-pacientes")
-    tabela.appendChild(pacienteTr)
-
-})
-
-
-
+}
