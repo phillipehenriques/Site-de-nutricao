@@ -35,7 +35,6 @@ function obtemPaciente(form) {
 
 function montaTr(paciente) {
     var pacienteTr = document.createElement("tr") // criando tr do paciente
-
     var nomeTd = document.createElement("td")
     var pesoTd = document.createElement("td")
     var alturaTd = document.createElement("td")
@@ -56,3 +55,4 @@ function montaTr(paciente) {
 
     return pacienteTr
 }
+

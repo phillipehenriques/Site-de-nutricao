@@ -42,12 +42,15 @@ for(var i = 0; i < pacientes.length ; i++) {
         if (alturaValida && pesoValido) { // se os dois valores forem 'true' o bloco é executado
 
             var IMC = calcular(peso, altura)
-        tdIMC.textContent = IMC // Acessando o conteúdo de 'tdIMC' e definindo que o conteúdo deve ser a variável IMC
+            tdIMC.textContent = IMC // Acessando o conteúdo de 'tdIMC' e definindo que o conteúdo deve ser a variável IMC
 
         }
 }
 
-function calcular (peso, altura) {
+
+function calcular(peso, altura) {
+    peso = peso.replace(',', '.')
+    altura = altura.replace(',', '.')
 
     var imc = peso / (altura * altura)
 
